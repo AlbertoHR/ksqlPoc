@@ -1,0 +1,30 @@
+# Scala/SBT
+target/
+project/target/
+project/project/
+
+# IntelliJ project files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Logs
+logs/
+*.log
+
+# If using MacOS, also include:
+.DS_Store
+
+# If using Windows, also include:
+Thumbs.db
+
+# If using Linux, also include:
+*.swp
+
+# Other common directories to ignore
+out/
+dist/
+tmp/
+
+.bsp/
