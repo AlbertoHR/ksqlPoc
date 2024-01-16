@@ -6,12 +6,15 @@ lazy val root = (project in file("."))
   .settings(
     name := "scalaClient"
   )
-resolvers += "ksqlDB" at "https://ksqldb-maven.s3.amazonaws.com/maven/"
+libraryDependencies += "com.lihaoyi" %% "requests" % "0.8.0"
 
-libraryDependencies += "io.confluent.ksql" % "ksqldb-api-client" % "0.29.0" classifier "with-dependencies"
+libraryDependencies += "com.typesafe.play" %% "play" % "2.8.21"
+
 assembly / assemblyMergeStrategy := {
   case "git.properties" => MergeStrategy.discard
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case PathList("io", "confluent", xs @ _*) => MergeStrategy.first
+  case PathList("module-info.class") => MergeStrategy.discard
   case x => (assembly / assemblyMergeStrategy).value(x)
 }
+

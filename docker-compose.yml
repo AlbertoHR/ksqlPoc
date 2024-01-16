@@ -54,7 +54,7 @@ services:
     tty: true
 
   scala-app:
-    image: scala-app-image-5
+    image: scala-app-image-10
     depends_on:
       - broker
       - ksqldb-server
@@ -63,5 +63,4 @@ services:
       KSQLDB_PORT: "8088"
       KSQLDB_QUERY: "SELECT * FROM kafkaFormat1201;"
       KSQLDB_INIT_STATEMENT: "CREATE STREAM kafkaFormat1201 (message VARCHAR) WITH (KAFKA_TOPIC='events_12_01', VALUE_FORMAT='KAFKA', partitions=1);"
-      # KSQLDB_INIT_STATEMENT: "CREATE STREAM kafkaFormat0901 (message VARCHAR) WITH (KAFKA_TOPIC='events_09_01', VALUE_FORMAT='KAFKA', partitions=1);"
   
